@@ -14,7 +14,7 @@ Ce dépôt contient la configuration complète de mon homelab personnel basé su
 
 - Provisioning avec **Terraform**
 - Fichiers de configuration versionnés
-- Gestion des secrets via `.env`
+- Gestion des secrets via `.env` ou `terraform.tfvars`
 ---
 
 ## 🛠️ Objectifs
