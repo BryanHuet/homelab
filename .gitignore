@@ -39,3 +39,13 @@ terraform.rc
 
 # Ignore .env files
 .env
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.orig
+*.orig.bak
+*.orig.backup
+*.orig.old
+*.orig.orig
