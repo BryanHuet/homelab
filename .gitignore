@@ -39,6 +39,7 @@ terraform.rc
 
 # Ignore .env files
 .env
+.ssh
 
 # Backup files
 *.bak

@@ -11,3 +11,7 @@ variable "proxmox_node" {
     type = string
     default = "local"
 }
+
+variable "ssh_public_key" {
+    type = string
+}

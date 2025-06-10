@@ -13,8 +13,15 @@ provider "proxmox" {
   insecure = true
   tmp_dir  = "/var/tmp"
   random_vm_ids = true
+
+  ssh {
+    agent = true
+  }
 }
 
+data "local_file" "ssh_public_key" {
+  filename = "../.ssh/id_ed25519.pub"
+}
 
 resource "proxmox_virtual_environment_vm" "debian_clone" {
   name      = "debian-clone"
@@ -40,6 +47,10 @@ resource "proxmox_virtual_environment_vm" "debian_clone" {
       ipv4 {
         address = "dhcp"
       }
+    }
+    user_account {
+      username = "guest"
+      keys     = [trimspace(data.local_file.ssh_public_key.content)]
     }
   }
 }
