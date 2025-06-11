@@ -49,7 +49,7 @@ resource "proxmox_virtual_environment_vm" "debian_clone" {
       }
     }
     user_account {
-      username = "guest"
+      username = "root"
       keys     = [trimspace(data.local_file.ssh_public_key.content)]
     }
   }
